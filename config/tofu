@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -e
+
+: "${DOCKER:="docker"}"
+
+: "${OPENTOFU_IMAGE:="ghcr.io/opentofu/opentofu"}"
+: "${OPENTOFU_VERSION:="1.8.7"}"
+
+: "${TF_VAR_opentofu_state_passphrase:="VERY_SECRET_PASSPHRASE"}" # for testing purposes only!
+
+: "${VAULT_ADDR:="http://openbao-127.0.0.1.nip.io:8080"}"
+: "${VAULT_TOKEN:?"Please set VAULT_TOKEN"}"
+
+${DOCKER} run \
+  -it \
+  --network=host \
+  -u $(stat -c '%u:%g' $(pwd)) \
+  --workdir=/srv/workspace \
+  --mount type=bind,source=.,target=/srv/workspace \
+  --env TF_VAR_opentofu_state_passphrase=${TF_VAR_opentofu_state_passphrase} \
+  --env VAULT_ADDR="${VAULT_ADDR}" \
+  --env VAULT_TOKEN="${VAULT_TOKEN}" \
+  ${OPENTOFU_IMAGE}:${OPENTOFU_VERSION} \
+  "$@"

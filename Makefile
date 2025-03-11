@@ -1,5 +1,10 @@
 .DEFAULT_GOAL := help
 
+KEYCLOAK_HELM_NAME := keycloak
+KEYCLOAK_HELM_PATH := charts/keycloak/
+KEYCLOAK_HELM_VALUES := charts/keycloak/values.yaml
+KEYCLOAK_NAMESPACE := keycloak
+
 OPENBAO_HELM_NAME := openbao
 OPENBAO_HELM_PATH := charts/openbao/
 OPENBAO_HELM_VALUES := charts/openbao/override-values.yaml
@@ -44,6 +49,17 @@ install-ha: helm  ## 🚀 Install OpenBao in 'ha' mode in kubernetes cluster
 		-f $(OPENBAO_HELM_VALUES) -f $(OPENBAO_HELM_VALUES_HA) \
 		$(OPENBAO_HELM_NAME) \
 		$(OPENBAO_HELM_PATH)
+
+.PHONY: keycloak
+keycloak: helm  ## 🆔 Install Keycloak as Idenity Provider
+	helm dependency update $(KEYCLOAK_HELM_PATH)
+	helm dependency build $(KEYCLOAK_HELM_PATH)
+	helm upgrade --install \
+		--create-namespace \
+		--namespace $(KEYCLOAK_NAMESPACE) \
+		-f $(KEYCLOAK_HELM_VALUES) \
+		$(KEYCLOAK_HELM_NAME) \
+		$(KEYCLOAK_HELM_PATH)
 
 .PHONY: uninstall
 uninstall:  ## 🗑️  Uninstall applications in kubernetes cluster

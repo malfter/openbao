@@ -14,6 +14,7 @@ The project serves to take the first steps with [OpenBao](https://openbao.org/).
     - [🚀 Install OpenBao in HA Mode](#-install-openbao-in-ha-mode)
     - [🧽 Update OpenBao Installation](#-update-openbao-installation)
     - [🔧 Configure OpenBao Instance with OpenTofu](#-configure-openbao-instance-with-opentofu)
+    - [🆔 Install Keycloak as Identity Provider for OpenBao](#-install-keycloak-as-identity-provider-for-openbao)
   - [🎮 Play around with the API](#-play-around-with-the-api)
   - [🔗 Further Links](#-further-links)
 
@@ -132,6 +133,16 @@ export VAULT_TOKEN=root
 ./tofu init
 
 ./tofu apply
+```
+
+### 🆔 Install Keycloak as Identity Provider for OpenBao
+
+```bash
+# Install Keycloak in kubernetes cluster
+make keycloak
+
+# Access Keycloak UI
+open http://keycloak-127.0.0.1.nip.io:8080/
 ```
 
 ## 🎮 Play around with the API

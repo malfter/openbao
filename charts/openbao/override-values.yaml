@@ -1,0 +1,32 @@
+openbao:
+  server:
+    dev:
+      # IMPORTANT Dev mode: This is ideal for learning and demonstration
+      # environments but NOT recommended for a production environment.
+      enabled: true
+
+    ingress:
+      enabled: true
+      labels: {}
+      annotations: {}
+      ingressClassName: ""
+      pathType: Prefix
+      # When HA mode is enabled and K8s service registration is being used,
+      # configure the ingress to point to the OpenBao active service.
+      activeService: true
+      hosts:
+        - host: openbao-127.0.0.1.nip.io
+          paths: []
+      ## Extra paths to prepend to the host configuration. This is useful when working with annotation based services.
+      extraPaths: []
+      # - path: /*
+      #   backend:
+      #     service:
+      #       name: ssl-redirect
+      #       port:
+      #         number: use-annotation
+      tls: []
+      #  - secretName: chart-example-tls
+      #    hosts:
+      #      - chart-example.local
+

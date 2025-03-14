@@ -1,0 +1,6 @@
+# TODO
+
+- [ ] GitHub Actions
+  - [ ] Lint helm charts
+  - [ ] Enable Dependabot
+- [ ] Script to diff Helm Chart update

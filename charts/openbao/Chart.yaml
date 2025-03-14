@@ -1,0 +1,9 @@
+apiVersion: v2
+name: openbao-umbrella-chart
+description: Umbrella chart to configure openbao-helm chart
+version: 0.0.0
+icon: https://github.com/openbao/artwork/blob/main/color/openbao-color.svg
+dependencies:
+  - name: openbao
+    version: 0.9.0
+    repository: https://openbao.github.io/openbao-helm

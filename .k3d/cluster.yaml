@@ -4,6 +4,7 @@ apiVersion: k3d.io/v1alpha5
 kind: Simple
 metadata:
   name: openbao # name that you want to give to your cluster (will still be prefixed with `k3d-`)
+subnet: 172.19.0.0/24
 servers: 1
 agents: 3
 kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would resolve to 127.0.0.1)

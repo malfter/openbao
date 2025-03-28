@@ -44,6 +44,7 @@ podSecurityContext: {}
   # fsGroup: 2000
 
 podEnv:
+  # https://github.com/keycloak/keycloak-quickstarts/blob/main/kubernetes/keycloak.yaml#L37
   - name: KC_BOOTSTRAP_ADMIN_USERNAME
     value: "admin"
   - name: KC_BOOTSTRAP_ADMIN_PASSWORD

@@ -6,5 +6,9 @@ terraform {
       source  = "hashicorp/vault"
       version = "4.5.0"
     }
+    keycloak = {
+      source  = "keycloak/keycloak"
+      version = "5.1.1"
+    }
   }
 }

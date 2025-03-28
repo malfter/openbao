@@ -19,7 +19,7 @@ ${DOCKER} run \
   --workdir=/srv/workspace \
   --mount type=bind,source=.,target=/srv/workspace \
   --env TF_VAR_opentofu_state_passphrase=${TF_VAR_opentofu_state_passphrase} \
-  --env VAULT_ADDR="${VAULT_ADDR}" \
-  --env VAULT_TOKEN="${VAULT_TOKEN}" \
+  --env TF_VAR_vault_addr="${VAULT_ADDR}" \
+  --env TF_VAR_vault_token="${VAULT_TOKEN}" \
   ${OPENTOFU_IMAGE}:${OPENTOFU_VERSION} \
   "$@"

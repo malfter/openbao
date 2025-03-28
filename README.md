@@ -12,7 +12,6 @@ The project serves to take the first steps with [OpenBao](https://openbao.org/).
   - [🌱 How to use](#-how-to-use)
     - [🛸 Install OpenBao in Dev Mode](#-install-openbao-in-dev-mode)
     - [🚀 Install OpenBao in HA Mode](#-install-openbao-in-ha-mode)
-    - [🧽 Update OpenBao Installation](#-update-openbao-installation)
     - [🔧 Configure OpenBao Instance with OpenTofu](#-configure-openbao-instance-with-opentofu)
   - [🎮 Play around with the API](#-play-around-with-the-api)
   - [🔗 Further Links](#-further-links)
@@ -49,7 +48,7 @@ Install OpenBao in the Kubernetes cluster (ℹ️ The current k8s context is use
 - [https://openbao.org/docs/concepts/dev-server/]
 
 ```bash
-# Install openbao in kubernetes cluster (HA mode)
+# Install openbao in kubernetes cluster
 make install
 
 # Get unseal key
@@ -65,7 +64,7 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 ./bao status
 
 # Access OpenBao UI
-open http://openbao-127.0.0.1.nip.io:8080/ui/
+open https://openbao-127.0.0.1.nip.io:8443/ui
 ```
 
 ### 🚀 Install OpenBao in HA Mode
@@ -100,8 +99,7 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 ./bao status
 
 # Access OpenBao UI
-open http://openbao-127.0.0.1.nip.io:8080/ui/
-```
+open https://openbao-127.0.0.1.nip.io:8443/ui
 
 ### 🧽 Update OpenBao Installation
 

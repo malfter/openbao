@@ -5,6 +5,7 @@ OPENBAO_HELM_PATH := charts/openbao/
 OPENBAO_HELM_VALUES := charts/openbao/override-values.yaml
 OPENBAO_HELM_VALUES_HA := charts/openbao/override-values-ha.yaml
 OPENBAO_NAMESPACE := openbao
+OPENBAO_ROOT_TOKEN := root
 
 .PHONY: help
 help:  ## 💬 This help message
@@ -45,6 +46,23 @@ install-ha: helm  ## 🚀 Install OpenBao in 'ha' mode in kubernetes cluster
 		$(OPENBAO_HELM_NAME) \
 		$(OPENBAO_HELM_PATH)
 
+.PHONY: keycloak
+keycloak:  ## 🆔 Install Keycloak as Idenity Provider
+	docker compose up -d
+
+.PHONY: tf-fmt
+tf-fmt:  ## 🪄  tofu fmt
+	cd config && VAULT_TOKEN=$(OPENBAO_ROOT_TOKEN) ./tofu fmt -recursive
+
+.PHONY: tf-init
+tf-init:  ## ✨ tofu init
+	cd config && VAULT_TOKEN=$(OPENBAO_ROOT_TOKEN) ./tofu init
+
+.PHONY: tf-apply
+tf-apply:  ## ✍️  tofu apply
+	cd config && VAULT_TOKEN=$(OPENBAO_ROOT_TOKEN) ./tofu apply
+	# -auto-approve
+
 .PHONY: uninstall
 uninstall:  ## 🗑️  Uninstall applications in kubernetes cluster
 	helm uninstall \
@@ -54,3 +72,4 @@ uninstall:  ## 🗑️  Uninstall applications in kubernetes cluster
 .PHONY: cleanup
 cleanup:  ## 🧹 Clean up project
 	k3d cluster delete --config ./.k3d/cluster.yaml
+	docker compose down -v

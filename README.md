@@ -1,5 +1,6 @@
 # 🥟 openbao-playground
 
+<!-- markdownlint-disable MD033 -->
 <img src="assets/openbao.svg" alt="OpenBao Logo" style="width: 150px;">
 
 The project serves to take the first steps with [OpenBao](https://openbao.org/). Let's see where it leads... 🥳
@@ -12,8 +13,8 @@ The project serves to take the first steps with [OpenBao](https://openbao.org/).
   - [🌱 How to use](#-how-to-use)
     - [🛸 Install OpenBao in Dev Mode](#-install-openbao-in-dev-mode)
     - [🚀 Install OpenBao in HA Mode](#-install-openbao-in-ha-mode)
-    - [🧽 Update OpenBao Installation](#-update-openbao-installation)
-    - [🔧 Configure OpenBao Instance with OpenTofu](#-configure-openbao-instance-with-opentofu)
+    - [🆔 Install Keycloak as Identity Provider for OpenBao](#-install-keycloak-as-identity-provider-for-openbao)
+    - [🔧 Configure OpenBao and Keycloak Instance with OpenTofu](#-configure-openbao-and-keycloak-instance-with-opentofu)
   - [🎮 Play around with the API](#-play-around-with-the-api)
   - [🔗 Further Links](#-further-links)
 
@@ -49,7 +50,7 @@ Install OpenBao in the Kubernetes cluster (ℹ️ The current k8s context is use
 - [https://openbao.org/docs/concepts/dev-server/]
 
 ```bash
-# Install openbao in kubernetes cluster (HA mode)
+# Install openbao in kubernetes cluster
 make install
 
 # Get unseal key
@@ -65,7 +66,7 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 ./bao status
 
 # Access OpenBao UI
-open http://openbao-127.0.0.1.nip.io:8080/ui/
+open https://openbao-172.19.0.1.nip.io:8443/ui
 ```
 
 ### 🚀 Install OpenBao in HA Mode
@@ -100,8 +101,7 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 ./bao status
 
 # Access OpenBao UI
-open http://openbao-127.0.0.1.nip.io:8080/ui/
-```
+open https://openbao-172.19.0.1.nip.io:8443/ui
 
 ### 🧽 Update OpenBao Installation
 
@@ -117,9 +117,19 @@ vi Chart.yaml
 ./overrideValues.sh
 ```
 
-### 🔧 Configure OpenBao Instance with OpenTofu
+### 🆔 Install Keycloak as Identity Provider for OpenBao
 
-An OpenTofu provider is available for OpenBao, which can be used to customise and configure an instance.
+```bash
+# Install Keycloak in kubernetes cluster
+make keycloak
+
+# Access Keycloak UI (Username: admin, Password: admin)
+open http://keycloak-172.20.0.1.nip.io:7080/
+```
+
+### 🔧 Configure OpenBao and Keycloak Instance with OpenTofu
+
+An OpenTofu provider is available for OpenBao, which can be used to customize and configure an instance.
 
 An OpenTofu configuration is available in the directory [config](./config/), which can be used to apply some sample configurations.
 
@@ -168,3 +178,5 @@ HA Enabled      false
   - [https://github.com/openbao/openbao/issues/569]
 - Run OpenBao on Kubernetes
   - [https://openbao.org/docs/platform/k8s/helm/run/]
+- OpenBap OIDC Provider
+  - [https://openbao.org/docs/auth/jwt/oidc-providers/]

@@ -15,7 +15,7 @@ openbao:
       # configure the ingress to point to the OpenBao active service.
       activeService: true
       hosts:
-        - host: openbao-127.0.0.1.nip.io
+        - host: openbao-172.19.0.1.nip.io
           paths: []
       ## Extra paths to prepend to the host configuration. This is useful when working with annotation based services.
       extraPaths: []

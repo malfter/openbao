@@ -15,6 +15,7 @@ The project serves to take the first steps with [OpenBao](https://openbao.org/).
     - [🚀 Install OpenBao in HA Mode](#-install-openbao-in-ha-mode)
     - [🆔 Install Keycloak as Identity Provider for OpenBao](#-install-keycloak-as-identity-provider-for-openbao)
     - [🔧 Configure OpenBao and Keycloak Instance with OpenTofu](#-configure-openbao-and-keycloak-instance-with-opentofu)
+  - [🔐 OIDC Workflow with Keycloak as Identity Provider](#-oidc-workflow-with-keycloak-as-identity-provider)
   - [🎮 Play around with the API](#-play-around-with-the-api)
   - [🔗 Further Links](#-further-links)
 
@@ -143,6 +144,12 @@ export VAULT_TOKEN=root
 
 ./tofu apply
 ```
+
+## 🔐 OIDC Workflow with Keycloak as Identity Provider
+
+![OIDC Workflow](assets/oidc-workflow.excalidraw.png)
+
+* [https://openbao.org/docs/auth/jwt/oidc-providers/]
 
 ## 🎮 Play around with the API
 

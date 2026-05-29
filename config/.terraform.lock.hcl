@@ -3,9 +3,18 @@
 
 provider "registry.opentofu.org/hashicorp/vault" {
   version     = "4.5.0"
-  constraints = "4.5.0"
+  constraints = ">= 4.5.0, 4.5.0"
   hashes = [
+    "h1:+wKs9hDeViWLWokhYBrGSs5vf6KwYIcXlgADm0Wbp04=",
     "h1:2zN1LdTCiEpE8QWTbIcA+SDIGBXI52mwFMmwupWjfhE=",
+    "h1:49u8YNrkfEbGf9qtx9ohtBNivqbCpTz1fWCPkRfEQ40=",
+    "h1:6RjXUlhC6fzx48z01DNU15GaX5HlO/vuJ4hDOyQop4w=",
+    "h1:H7q3pVXkgbqjgcox5bJyz011XnbPv7bxDvXWJi0VQe8=",
+    "h1:KWtz/9RwY80JLQ18SFh6AesSKwgzm8LDGfwMz0kLbAY=",
+    "h1:P9IYPk8lKQTDvNVxGKEBDEWgPAYEKsp0+lI3NUP6n1w=",
+    "h1:SSPnAjeUU+2IL74VNTQpe3gLJe1TK59syjvrCZ1fYII=",
+    "h1:UnWmYb5nIavWV5HIK7oHlkWJlNnjXZJ2A1dl4zk0qzY=",
+    "h1:eYsZDIQRjo/AXdbHVTr5iTGERd/wJ4dx9ofAZQubMRw=",
     "zh:006189f781957a6128cfc71ea6e78015117dd8d618ca440a526feabf8168c708",
     "zh:01ea4b69af85ab3efaf07c94e716cfbea45c2c052fdfddbcf0194d28a8590d3f",
     "zh:21824df7ed7e5b2f596bf513c919a87663faf62bd4796c3d64df3de864af1397",
@@ -21,9 +30,25 @@ provider "registry.opentofu.org/hashicorp/vault" {
 
 provider "registry.opentofu.org/keycloak/keycloak" {
   version     = "5.1.1"
-  constraints = "5.1.1"
+  constraints = ">= 5.0.0, 5.1.1"
   hashes = [
+    "h1:/s1mR1BzW1A/ol1QJB29jVYsKkkb8wfEYT6fzJ4dQHs=",
+    "h1:1bjn2vb1L4laFZDnpxIyLaJwnWHA1rnsJrIxxnuZh1E=",
+    "h1:8IP0gRBQ0zwn8Zsbbh986ZehcyhF6rnjHJj2P2JTRQg=",
+    "h1:8KkzHb4YFDPLChfn62ysZ8DUX3KyYnca3mdUwpgg55g=",
+    "h1:9OGoqbfyeQEwF5/VLK+m18p4eIclVVMUwXKtr0CNR5I=",
+    "h1:AFCIne4lKs6e3oHoZOR+EvsS89M+rbEifYdB4JKXuyI=",
+    "h1:Dyh1Dg2vdIq0mhLimNQD/DErGfBDuYKiBZKgffT2Kb4=",
+    "h1:GK5EMEecUaEjNK8tiGgrDkF2eO2lRZpabatPcZ7CXhw=",
+    "h1:Kso9vMT2U3JDwqYfPeGnNbPpGyqlj/YkbZkSARfF+dM=",
+    "h1:MrZl7mo4nBfgCtZJtH2jvvAZ93tYpJDg0mAx735CfZc=",
+    "h1:Rq3XKG19JPLLOre41Dac4JNkM+Xe8O/5HpN9v6f/iJo=",
+    "h1:cDtnKAh3u5nZGcMRm/w5Gn8IO8q4Q6Fumh2afgQrRkM=",
+    "h1:dVsQPO1q2Y6lHNgEo89QXFQd/y0MdaGJkwYErvvuhpc=",
+    "h1:ltaU1Xj65ix1/iDdLDX1RP3nMwme262jurt2WEdlK1A=",
     "h1:ohtDJJxGi1IFns/jMPSKtKHFRpZeAfqnzKYI+xU5XsM=",
+    "h1:pcMkoAGKBscIYuPvnNWXi3j2UrVeAvkpA77lpJjlCyY=",
+    "h1:r+5fiIy+vGWg/iqtGmKpUcnLjFE7Lo5hXjxrQ+oTS2w=",
     "zh:29b91a1ac20abf706a4b409886604a95b2f16c7c49757098f737e33165c7d72c",
     "zh:35e083d75f5397ec6a79174b224e1a18e9a7bad3def9c0f96e2d5d5303007e11",
     "zh:3c820686ec96f418eccb99951148f1db1fe6e2f7b26df9ba736f465fce00a72e",

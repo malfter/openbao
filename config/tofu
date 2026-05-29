@@ -5,7 +5,7 @@ set -e
 : "${DOCKER:="docker"}"
 
 : "${OPENTOFU_IMAGE:="ghcr.io/opentofu/opentofu"}"
-: "${OPENTOFU_VERSION:="1.8.7"}"
+: "${OPENTOFU_VERSION:="1.12.1"}"
 
 : "${TF_VAR_opentofu_state_passphrase:="VERY_SECRET_PASSPHRASE"}" # for testing purposes only!
 

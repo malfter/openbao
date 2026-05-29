@@ -17,6 +17,10 @@ openbao:
       hosts:
         - host: openbao-172.19.0.1.nip.io
           paths: []
+        # The "localhost" configuration is used when OpenBao is running in a devcontainer (Docker-in-Docker) and the
+        # user interface needs to be accessed over the forwarded ports.
+        - host: localhost
+          paths: []
       ## Extra paths to prepend to the host configuration. This is useful when working with annotation based services.
       extraPaths: []
       # - path: /*

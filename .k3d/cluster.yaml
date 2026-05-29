@@ -11,7 +11,7 @@ kubeAPI: # same as `--api-port myhost.my.domain:6445` (where the name would reso
   # host: "myhost.my.domain" # important for the `server` setting in the kubeconfig
   # hostIP: "127.0.0.1" # where the Kubernetes API will be listening on
   hostPort: "6445"
-image: rancher/k3s:v1.32.1-k3s1
+image: rancher/k3s:v1.35.5-k3s1
 ports:
   - port: 8080:80 # same as `--port '8080:80@loadbalancer'`
     nodeFilters:

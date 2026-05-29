@@ -2,8 +2,8 @@
 
 set -e
 
-: "${K9S_VERSION:="v0.32.7"}"
-: "${YQ_VERSION:="v4.44.5"}"
+: "${K9S_VERSION:="v0.50.18"}"
+: "${YQ_VERSION:="v4.53.2"}"
 
 : "${CURL:="curl"}"
 : "${WGET:="wget"}"

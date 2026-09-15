@@ -21,7 +21,7 @@
                 "Gruntfuggly.todo-tree",
                 "yzhang.markdown-all-in-one",
                 "ms-vscode.makefile-tools",
-                "gamunu.opentofu"
+                "opentofu.vscode-opentofu"
             ]
         }
     },

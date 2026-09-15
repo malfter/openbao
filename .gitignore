@@ -62,3 +62,6 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore devcontainer lock file
+.devcontainer/devcontainer-lock.json

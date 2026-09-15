@@ -13,6 +13,7 @@ The project serves to take the first steps with [OpenBao](https://openbao.org/).
   - [🌱 How to use](#-how-to-use)
     - [🛸 Install OpenBao in Dev Mode](#-install-openbao-in-dev-mode)
     - [🚀 Install OpenBao in HA Mode](#-install-openbao-in-ha-mode)
+    - [🧽 Update OpenBao Installation](#-update-openbao-installation)
     - [🆔 Install Keycloak as Identity Provider for OpenBao](#-install-keycloak-as-identity-provider-for-openbao)
     - [🔧 Configure OpenBao and Keycloak Instance with OpenTofu](#-configure-openbao-and-keycloak-instance-with-opentofu)
   - [🔐 OIDC Workflow with Keycloak as Identity Provider](#-oidc-workflow-with-keycloak-as-identity-provider)
@@ -103,6 +104,7 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 
 # Access OpenBao UI
 open https://openbao-172.19.0.1.nip.io:8443/ui
+```
 
 ### 🧽 Update OpenBao Installation
 

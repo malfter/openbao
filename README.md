@@ -69,6 +69,8 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 
 # Access OpenBao UI
 open https://openbao-172.19.0.1.nip.io:8443/ui
+# or if you are using the devcontainer (port forwarding is already set up)
+open https://localhost:8443/ui
 ```
 
 ### 🚀 Install OpenBao in HA Mode
@@ -104,6 +106,8 @@ export VAULT_TOKEN=<ROOT_TOKEN>
 
 # Access OpenBao UI
 open https://openbao-172.19.0.1.nip.io:8443/ui
+# or if you are using the devcontainer (port forwarding is already set up)
+open https://localhost:8443/ui
 ```
 
 ### 🧽 Update OpenBao Installation
